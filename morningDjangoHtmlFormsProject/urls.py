@@ -17,9 +17,14 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from . import views
+
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',views.index,name = 'home-page'),
-    path('add-product/',views.add_product,name= 'add-product-page'),
+    path('', views.index, name='home-page'),
+    path('add-product/', views.add_product, name='add-product-page'),
+    path('products/', views.products, name='all-products'),
+    path('delete-product/<id>', views.delete_product, name='del-prod'),
+    path('update-product/<id>', views.update_product, name='upd-product'),
+    path('register/', views.register, name='user-registration')
 
 ]
