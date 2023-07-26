@@ -1,30 +1,33 @@
 {% extends 'master.html' %}
 {% load static %}
 {% block content %}
-<div>
-<h1 class="text-primary text text-center">
+    <div>
+        <h1 class="text-primary text text-center"></h1>
 
+        <div class="container mt-3 ">
+            <table class="table  table-hover table-warning table-bordered ">
 
-    <table class="table  table-hover table-warning">
-        <tr>
-            <th>Name</th>
-            <th>Quantity</th>
-            <th>Size</th>
-            <th>Price</th>
-            <th>Delete</th>
-            <th>Update</th>
-        </tr>
-        {% for product in all_productss %}
-            <tr>
-                <td>{{ product.name }}</td>
-                <td>{{ product.qtty }}</td>
-                <td>{{ product.size }}</td>
-                <td>{{ product.price }}</td>
-                <td><a class="btn btn-danger" href="/delete-product/{{ product.id }}">DELETE</a></td>
-                <td><a class="btn btn-info" href="/update-product/{{ product.id }}">UPDATE</a></td>
-            </tr>
-        {% endfor %}
-    </table>
-</h1>
-</div>
+                <tr>
+                    <th>Name</th>
+                    <th>Quantity</th>
+                    <th>Size</th>
+                    <th>Price</th>
+                    <th>Delete</th>
+                    <th>Update</th>
+                </tr>
+                {% for product in all_productss %}
+                    <tr>
+                        <td>{{ product.name }}</td>
+                        <td>{{ product.qtty }}</td>
+                        <td>{{ product.size }}</td>
+                        <td>{{ product.price }}</td>
+                        <td><a class="btn btn-outline-danger" href="/delete-product/{{ product.id }}">DELETE</a></td>
+                        <td><a class="btn btn-outline-primary" href="/update-product/{{ product.id }}">UPDATE</a></td>
+                    </tr>
+                {% endfor %}
+            </table>
+
+        </div>
+
+    </div>
 {% endblock %}

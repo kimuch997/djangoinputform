@@ -1,4 +1,19 @@
 .product-form, .register-form{
     width: 40%;
     margin: auto;
+
+}
+.h1{
+    font-weight:lighter;
+    background-color: maroon;
+    font-family: 'Fraunces';
+    font-size: 66px;
+    font-weight:1000;
+}
+.H1{
+    font-weight:lighter;
+    background-color: maroon;
+    font-family: 'Fraunces';
+    font-size: 66px;
+    font-weight:1000;
 }

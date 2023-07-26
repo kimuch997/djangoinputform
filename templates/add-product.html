@@ -2,24 +2,44 @@
 {% load static %}
 {% block content %}
     <div>
-        <h1 class="text-primary text-center" >ADD PRODUCT</h1>
-        <form class="product-form" method="POST" action="{% url 'add-product-page' %}">
+        <h1 class="H1 text-primary text-center " >ADD PRODUCT</h1>
+        <form class="product-form was-validated" method="POST" action="{% url 'add-product-page' %}">
             <p>{{ success }}</p>
-           {% csrf_token %}
-            <input required class="form-control" placeholder="Enter name" name="p-name" type="text"><br><br>
-            <input required class="form-control" placeholder="Enter quantity" name="q-tty" type="text"><br><br>
-{#            <input required class="form-control" placeholder="Enter size" name="p-size" type="text"><br><br>#}
-            <select  required class="form-control"  name="p-size" id="">
-                <option value="Small">Small</option>
-                <option value="Medium">Medium</option>
-                <option value="Large">Large</option>
-            </select><br>
-            <input required class="form-control" placeholder="Enter price" name="p-price" type="text"><br><br>
-            <input class="btn btn-info" value="Save" type="submit">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="#">Product name:</label>
+                <input required class="form-control" placeholder="Enter product name" name="p-name" type="text">
+                <div class="valid-feedback">Valid.</div>
+                <div class="invalid-feedback">Please fill out this field.</div>
+            </div>
+            <div class="form-group">
+                <label for="#">Quantity:</label>
+                <input required class="form-control" placeholder="Enter quantity" name="q-tty" type="text">
+                <div class="valid-feedback">Valid</div>
+                <div class="invalid-feedback">Please fill out this field</div>
+            </div>
+
+            <div>
+                {#            <input required class="form-control" placeholder="Enter size" name="p-size" type="text"><br><br>#}
+                <select  required class="form-control"  name="p-size" id="">
+                    <option value="Small">Small</option>
+                    <option value="Medium">Medium</option>
+                    <option value="Large">Large</option>
+                </select><br>
+            </div>
+            <div class="form-group">
+                <label for="#">Price:</label>
+                <input required class="form-control" placeholder="Enter price" name="p-price" type="text">
+                <div class="valid-feedback">Valid</div>
+                <div class="invalid-feedback">Please fill out this field</div>
+            </div>
+
+
+            <input class="btn btn-info btn-lg" value="Save" type="submit">
         </form>
-    <p>{{  prod_name }}</p>
-    <p>{{  prod_size }}</p>
-    <p>{{  prod_price }}</p>
+        <p>{{  prod_name }}</p>
+        <p>{{  prod_size }}</p>
+        <p>{{  prod_price }}</p>
 
 
     </div>
